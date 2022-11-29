@@ -2,17 +2,11 @@ import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, DoChec
 
 @Component({
   selector: 'app-root',
-  template: `
-  <app-title *ngIf="show" title="Mudando via app.component"></app-title>
-  <button (click)="adicionar()">Add</button>
-  <br>
-  {{valor}}
-  <br>
-  <br>
-  <button (click)="boolComponent()">Bool Componente</button>
-  <router-outlet></router-outlet>
-  `
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
+
+//
 export class AppComponent implements
   OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit {
 

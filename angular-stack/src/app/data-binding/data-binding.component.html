@@ -1,0 +1,22 @@
+<h2>Interpolation</h2>
+<p>{{nome}}</p>
+
+<p>O nome {{nome}} é Nicolas?</p>
+<p>{{nome == 'Nicolas'}}</p>
+
+
+<h2>Property Bind</h2>
+
+<button [disabled]="checkedDisabled">Butao</button>
+
+
+<h2>Event Binding</h2>
+
+<button (click)="alerta($event)">Evento</button>
+
+
+
+
+<h2>Two-way data binding</h2>
+
+<input [(ngModel)]="nome"> {{nome}}
