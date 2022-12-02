@@ -23,7 +23,7 @@ export class AppComponent implements
     this.show = !this.show;
     // Só para mostrar a ativação do ciclo de vida do componente.
   }
-
+  ///////////////////////////////////////////////////
   ngOnInit(): void {
     console.log("Invocando: ngOnInit")
   }
@@ -39,6 +39,12 @@ export class AppComponent implements
   ngAfterViewInit(): void {
     console.log("Invocando: ngAfterViewInit")
   }
+  /////////////////////////////////////////////////////
 
+  public addValor: number = 0;
+
+  public mudaValor() {
+    this.addValor = Math.random();
+  }
 
 }
