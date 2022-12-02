@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NovoComponenteComponent } from './novo-componente/novo-componente.component';
 import { InputComponent } from './input/input.component';
+import { OutputComponent } from './output/output.component';
 
 // ng g m shared //Cria modulo compartilhado
 // ng g c shared/novoComponente // cria componente compartilhado no modulo.
@@ -9,11 +10,13 @@ import { InputComponent } from './input/input.component';
 @NgModule({
   declarations: [
     NovoComponenteComponent,
-    InputComponent
+    InputComponent,
+    OutputComponent
   ],
-  exports:[
+  exports: [
     NovoComponenteComponent,
-    InputComponent
+    InputComponent,
+    OutputComponent
   ],
   imports: [
     CommonModule

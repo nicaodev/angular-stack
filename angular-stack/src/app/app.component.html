@@ -15,4 +15,13 @@
 <hr>
 <app-input [contador]="addValor"></app-input>
 <button (click)="mudaValor()">Muda Valor</button>
+<hr>
+<app-output (enviarDados)="recebeDados($event)"></app-output>
+<ng-template [ngIf]="getDadosOutput">
+  <hr>
+  Dado recebido via @Output()
+  <h3>{{getDadosOutput!.nome}}</h3>
+  <h3>{{getDadosOutput!.idade}}</h3>
+  <hr>
+</ng-template>
 <router-outlet></router-outlet>

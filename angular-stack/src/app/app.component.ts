@@ -12,7 +12,9 @@ export class AppComponent implements
 
   constructor() { }
 
+  public getDadosOutput: { nome: string, idade: number } | undefined;
 
+  public addValor: number = 0;
   public valor: number = 1;
   public show: boolean = true;
 
@@ -41,10 +43,13 @@ export class AppComponent implements
   }
   /////////////////////////////////////////////////////
 
-  public addValor: number = 0;
 
   public mudaValor() {
     this.addValor = Math.random();
+  }
+
+  public recebeDados(event: { nome: string, idade: number }) {
+    this.getDadosOutput = event;
   }
 
 }
