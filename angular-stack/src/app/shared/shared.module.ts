@@ -4,6 +4,7 @@ import { NovoComponenteComponent } from './novo-componente/novo-componente.compo
 import { InputComponent } from './input/input.component';
 import { OutputComponent } from './output/output.component';
 import { FoodListComponent } from './food-list/food-list.component';
+import { FoodAddComponent } from './food-add/food-add.component';
 
 // ng g m shared //Cria modulo compartilhado
 // ng g c shared/novoComponente // cria componente compartilhado no modulo.
@@ -13,13 +14,15 @@ import { FoodListComponent } from './food-list/food-list.component';
     NovoComponenteComponent,
     InputComponent,
     OutputComponent,
-    FoodListComponent
+    FoodListComponent,
+    FoodAddComponent
   ],
   exports: [
     NovoComponenteComponent,
     InputComponent,
     OutputComponent,
-    FoodListComponent
+    FoodListComponent,
+    FoodAddComponent
   ],
   imports: [
     CommonModule
