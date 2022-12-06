@@ -15,9 +15,12 @@ export class FoodListComponent implements OnInit {
 
   ngOnInit(): void {
     this.returnFood = this.foodlistService.foodList();
+
+    this.foodlistService.emitEvent.subscribe({
+
+      // O rxjs atualizou a sintaxe do subscribe, veja:
+      next: (res: string) => alert(`Você add um item -> ${res}`),
+      error: (err: string) => console.log(err),
+    });
   }
-
-
-
-
 }

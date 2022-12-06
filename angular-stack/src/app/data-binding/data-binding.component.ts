@@ -10,7 +10,7 @@ export class DataBindingComponent {
   constructor() { }
 
   public nome: string = 'Nicolas';
-  public checkedDisabled: boolean = false;
+  public checkedDisabled: boolean = true;
 
   public alerta(evento: MouseEvent) {
     console.log(evento);

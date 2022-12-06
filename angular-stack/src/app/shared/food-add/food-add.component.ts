@@ -8,8 +8,7 @@ import { FoodlistService } from 'src/app/services/foodlist.service';
 })
 export class FoodAddComponent {
 
-  constructor(private foodlistService: FoodlistService) {
-  }
+  constructor(private foodlistService: FoodlistService) { }
 
   public listAddItem(value: string) {
     this.foodlistService.foodListAdd(value);
