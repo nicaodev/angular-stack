@@ -30,13 +30,13 @@ export class AppComponent implements
     console.log("Invocando: ngOnInit")
   }
   ngDoCheck(): void {
-    console.log("Invocando: ngDoCheck")
+    //console.log("Invocando: ngDoCheck")
   }
   ngAfterContentInit(): void {
     console.log("Invocando: ngAfterContentInit")
   }
   ngAfterContentChecked(): void {
-    console.log("Invocando: ngAfterContentChecked")
+    //console.log("Invocando: ngAfterContentChecked")
   }
   ngAfterViewInit(): void {
     console.log("Invocando: ngAfterViewInit")

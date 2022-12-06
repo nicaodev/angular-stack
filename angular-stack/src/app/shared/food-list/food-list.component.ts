@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IfoodList } from 'src/app/module/ifood-list';
 import { FoodlistService } from 'src/app/services/foodlist.service';
 
 @Component({
@@ -11,16 +12,20 @@ export class FoodListComponent implements OnInit {
   constructor(private foodlistService: FoodlistService) {
   }
 
-  public returnFood: Array<string> = [];
+  public returnFood: Array<IfoodList> = [];
 
   ngOnInit(): void {
-    this.returnFood = this.foodlistService.foodList();
+    this.foodlistService.foodList().subscribe({
+      next: (res) => this.returnFood = res,
+      error: (err) => err,
+    });
 
     this.foodlistService.emitEvent.subscribe({
-
-      // O rxjs atualizou a sintaxe do subscribe, veja:
-      next: (res: string) => alert(`Você add um item -> ${res}`),
-      error: (err: string) => console.log(err),
-    });
+      next: (res: IfoodList) => {
+        alert(`Você add um item a lista -> ${res.nome}`);
+        return this.returnFood.push(res)
+      },
+      error: (err: any) => err,
+    })
   }
 }
