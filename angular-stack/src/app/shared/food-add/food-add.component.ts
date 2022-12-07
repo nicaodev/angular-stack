@@ -11,7 +11,7 @@ export class FoodAddComponent {
   constructor(private foodlistService: FoodlistService) { }
 
   public listAddItem(value: string) {
-    return this.foodlistService.foodListAdd(value).subscribe({
+    return this.foodlistService.foodListPost(value).subscribe({
       next: (res) => this.foodlistService.FoodListAlert(res),
       error: (err) => err,
     });

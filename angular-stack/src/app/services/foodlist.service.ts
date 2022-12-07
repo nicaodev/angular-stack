@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IfoodList } from '../module/ifood-list';
@@ -14,6 +14,11 @@ export class FoodlistService {
   //A partir que emitir um evento vamos nos increver nele e sempre que o evento fizer algo vamos estar lá "inscritos" esperando
   // Uma vez subscrito vai ficar até quando findar o retorno das informações.
 
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+  };
 
   constructor(private http: HttpClient) { }
 
@@ -43,8 +48,8 @@ export class FoodlistService {
   //   return this.list.push(value);
   // }
 
-  public foodListAdd(value: string): Observable<IfoodList> {
-    return this.http.post<IfoodList>(`${this.url}/list-food`, { nome: value })
+  public foodListPost(value: string): Observable<IfoodList> {
+    return this.http.post<IfoodList>(`${this.url}/list-food`, { nome: value }, this.httpOptions)
       .pipe(
         res => res,
         error => error
