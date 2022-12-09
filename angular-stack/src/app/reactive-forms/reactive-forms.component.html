@@ -1,0 +1,7 @@
+<form [formGroup]="cadastroForm" (ngSubmit)="submitForm()">
+  <input type="text" formControlName="firstName">
+
+  {{cadastroForm.get('firstName')?.value}}
+
+  <button [disabled]="!cadastroForm.valid"> Enviar</button>
+</form>
