@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CoreModule } from './core/core.module';
+import { CanActivateChildGuard } from './shared/guards/can-activate-child.guard';
 import { CanActiveGuard } from './shared/guards/can-active.guard';
 import { CanDeactiveGuard } from './shared/guards/can-deactive.guard';
 import { CanLoadGuard } from './shared/guards/can-load.guard';
@@ -19,6 +20,7 @@ const routes: Routes = [
   {
     path: 'core', loadChildren: () => import('./core/core.module').then((m) => m.CoreModule),// Carrega com lazy loading.
     canLoad: [CanLoadGuard],
+    canActivateChild: [CanActivateChildGuard]
   },
 ];
 

@@ -1,8 +1,11 @@
 <p>home works!</p>
 
-
 <a routerLink="account">Account</a>
-<br>
-<a routerLink="core">Dashboard</a>
-<br>
-<a routerLink="core/leads">Leads</a>
+<br />
+<a routerLink="core" [queryParams]="{ acc: 'admin', password: '123' }"
+  >Dashboard</a
+>
+<br />
+<a routerLink="core/leads" [queryParams]="{ acc: 'admin', password: '123' }"
+  >Leads</a
+>
