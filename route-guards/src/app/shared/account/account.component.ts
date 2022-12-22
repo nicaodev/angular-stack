@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AccountComponent {
 
+
+  public exit(): boolean {
+    if (confirm('Quer sair?')) {
+      return true;
+    }
+    return false;
+  }
 }
