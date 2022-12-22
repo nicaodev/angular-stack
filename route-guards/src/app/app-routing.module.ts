@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoreModule } from './core/core.module';
 import { CanActiveGuard } from './shared/guards/can-active.guard';
 import { CanDeactiveGuard } from './shared/guards/can-deactive.guard';
+import { CanLoadGuard } from './shared/guards/can-load.guard';
 import { AccountComponent } from './shared/pages/account/account.component';
 import { HomeComponent } from './shared/pages/home/home.component';
 
@@ -16,7 +17,8 @@ const routes: Routes = [
     canDeactivate: [CanDeactiveGuard]
   },
   {
-    path: '', loadChildren: () => import('./core/core.module').then((m) => m.CoreModule) // Carrega com lazy loading.
+    path: 'core', loadChildren: () => import('./core/core.module').then((m) => m.CoreModule),// Carrega com lazy loading.
+    canLoad: [CanLoadGuard],
   },
 ];
 
