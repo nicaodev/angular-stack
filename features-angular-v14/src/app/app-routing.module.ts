@@ -4,10 +4,10 @@ import { HeaderComponent } from './core/header/header.component';
 import { SobreComponent } from './core/sobre/sobre.component';
 
 const routes: Routes = [{
-  path: '', component: HeaderComponent
+  path: '', component: HeaderComponent, title: 'Homezao'
 },
 {
-  path: 'sobre', component: SobreComponent
+  path: 'sobre', component: SobreComponent, title: 'Sobre-what'
 }];
 
 @NgModule({
