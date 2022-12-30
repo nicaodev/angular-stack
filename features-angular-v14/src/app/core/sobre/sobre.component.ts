@@ -1,13 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-sobre',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule], // importando modulos direto no componente em uso.
   templateUrl: './sobre.component.html',
   styleUrls: ['./sobre.component.scss']
 })
-export class SobreComponent {
+export class SobreComponent implements OnInit {
+  public form = this.fb.group({
+    email: ['abc@g.com'],
+    senha: ['']
+  })
 
+  /**
+   *
+   */
+  constructor(private fb: FormBuilder) { }
+  ngOnInit(): void {
+    console.log(this.form.value)
+  }
 }
