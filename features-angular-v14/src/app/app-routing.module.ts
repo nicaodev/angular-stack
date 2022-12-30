@@ -7,7 +7,7 @@ const routes: Routes = [{
   path: '', component: HeaderComponent, title: 'Homezao'
 },
 {
-  path: 'sobre', component: SobreComponent, title: 'Sobre-what'
+  path: 'sobre/:id', component: SobreComponent, title: 'Sobre-what'
 }];
 
 @NgModule({

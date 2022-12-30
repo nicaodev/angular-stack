@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { getRouteParams } from 'src/app/helpers/get-route-params';
 
 @Component({
   selector: 'app-sobre',
@@ -15,11 +16,11 @@ export class SobreComponent implements OnInit {
     senha: ['']
   })
 
-  /**
-   *
-   */
+  public rotaIdAtual = getRouteParams('id')
+
   constructor(private fb: FormBuilder) { }
   ngOnInit(): void {
-    console.log(this.form.value)
+    console.log(this.form.value);
+    console.log('Rota ID', this.rotaIdAtual);
   }
 }
